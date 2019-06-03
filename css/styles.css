@@ -1,0 +1,229 @@
+body
+{
+	background-color: #660000;
+}
+
+#quizContainer
+{
+	width: 600px;
+	margin: 50px auto 0 auto;
+}
+
+.pnlMain, .pnlQuestions, .pnlResults
+{
+	width: 100%;
+	font-family: verdana;
+	font-size: 14px;
+	color: #FFFFFF;
+	padding: 1em;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+.pnlMain.main, .pnlQuestions.questions, .pnlResults.results
+{
+	display: block;
+}
+
+.pnlMain .content, .pnlResults .content
+{
+	margin-top: 20%;
+	margin-bottom: 20%;
+	text-align: center;
+}
+
+.pnlQuestions .content
+{
+	display: none;
+}
+
+.pnlQuestions .content.current
+{
+	display: block;
+}
+
+.buttons
+{
+	width: 100%;
+	height: 3em;
+}
+
+.btn
+{
+	float: right;
+	width: 8em;
+	border-radius: 5px;
+	border: 0px solid #FFFFFF;
+	padding: 0.5em;
+	margin-left: 0.5em;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #AA0000;
+	cursor: pointer;
+}
+
+.btn:hover
+{
+	background-color: #FF0000;
+}
+
+#btnNext.btn
+{
+	color: #000000;
+	background-color: #440000;
+}
+
+#btnNext.btn.answered
+{
+	color: #FFFFFF;
+	background-color: #AA0000;
+}
+
+#btnNext.btn:hover
+{
+	background-color: #440000;
+}
+
+#btnNext.btn.answered:hover
+{
+	background-color: #FF0000;
+}
+
+.timer
+{
+	width: 2em;
+	height: 2em;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 50%;
+	border: 3px solid #440000;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin-top: -1.5em;
+	margin-left: -1.5em;
+}
+
+.timer p
+{
+	margin-top: 0.25em;
+}
+
+.question
+{
+	width: 100%;
+	height: 6em;	
+}
+
+.questionText
+{
+	width: 70%;
+	float: left;
+	font-size: 1.5em;
+}
+
+.questionProgress
+{
+	width: 30%;
+	float: right;
+	text-align: right;
+}
+
+.questionText
+{
+	width: 70%;
+	float: left;
+	font-size: 1.5em;
+}
+
+.option
+{
+	width: 100%;
+	height: 3em;
+}
+
+.selector
+{
+	width: 3em;
+	float: left;
+}
+
+.text
+{
+	width: 90%;
+	float: left;
+}
+
+.optionIndicator
+{
+	width: 1.5em;
+	height: 1.5em;
+	float: left;
+}
+
+.optionIndicator:before
+{
+	display: block;
+	content: "";
+	font-size: 1.5em;
+}
+
+.optionIndicator.selected.correct:before
+{
+	display: block;
+	content: "\2713";
+	color: #00FF00;
+}
+
+.optionIndicator.selected.wrong:before
+{
+	display: block;
+	content: "\2717";
+	color: #FF0000;
+}
+
+.optionSelector
+{
+	width: 0.8em;
+	height: 0.8em;
+	border: 1px solid #AAAAAA;
+	cursor: pointer;
+	border-radius: 50%;
+	float: left;
+	background-color: transparent;
+}
+
+.optionSelector:hover
+{
+	border: 1px solid #999999;
+}
+
+.optionSelector.selected
+{
+	background-color: #440000;
+	border: 1px solid #000000;
+}
+
+.optionText
+{
+	width: 100%;
+	height: 1.5em;
+	font-size: 0.9em;
+}
+
+.optionExplanation
+{
+	width: 80%;
+	height: 2.5em;
+	visibility: hidden;
+	font-size: 0.7em;
+	color: #FF4400;
+}
+
+.optionExplanation.answered.correct
+{
+	visibility: visible;
+}
