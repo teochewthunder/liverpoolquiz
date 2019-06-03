@@ -19,4 +19,3 @@ To celebrate Liverpool's triumph in the 2019 UEFA Champions League, I created th
 ## CSS
 - The panels are hidden by default.
 - They are only visible when paired with *answered*, *current* or the section name, or any combination of the three.
-- 
