@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Liverpool Quiz</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css"> 
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	
+    <body ng-app="quizApp">
+		<div ng-controller="quizCtrl" id="quizContainer">
+			<div class="pnlMain {{getStage()}}" style="background-image: url(img/main.jpg)">
+				<div class="content">
+					<h1>Welcome to the Liverpool FC Quiz!</h1>
+					<p>Let's see how well you know your club.</p>
+				</div>
+				
+				<div class="buttons">
+					<input type="button" id="btnBegin" class="btn" value="Begin" ng-click="nextQuestion()">
+				</div>
+			</div>
+
+			<div class="pnlQuestions {{getStage()}}" style="background-image: url(img/q{{currentQuestion}}.jpg)">
+				<div class="timer">
+					<p>{{secondsRemaining}}</p>
+				</div>
+				
+				<div ng-repeat="question in questions">
+					<div class="content {{isCurrentQuestion($index)}}">
+						<div class="question">
+							<div class="questionText">
+								{{question.text}}
+							</div>
+
+							<div class="questionProgress">
+								{{currentQuestion + 1}} of {{possible}}
+							</div>	
+						</div>
+
+						<br style="clear:both">
+
+						<div class="answers">
+							<div class="option" ng-repeat="option in question.options">
+								<div class="selector">
+									<div class="optionIndicator {{option.selected}} {{getIndicator($parent.$index, $index)}}"></div>
+									<div class="optionSelector {{option.selected}}" ng-click="selectOption($parent.$index, $index)"></div>
+								</div>
+
+								<div class="text">
+									<div class="optionText">{{option.text}}</div>
+									<div class="optionExplanation {{isAnswered($parent.$index)}} {{getIndicator($parent.$index, $index)}}">{{question.explanation}}</div>
+								</div>
+							</div>
+						</div>
+
+						<br style="clear:both">
+					</div>
+				</div>
+
+				<div class="buttons">
+					<input type="button" id="btnNext" class="btn {{isAnswered(currentQuestion)}}" value="{{proceed}}" ng-click="nextQuestion()">
+					<input type="button" id="btnQuit" class="btn" value="Quit" ng-click="initQuiz()">
+				</div>
+			</div>
+
+			<div class="pnlResults {{getStage()}}" style="background-image: url(img/results_{{resultsGrade}}.jpg)">
+				<div class="content">
+					<h1>{{secondsRemainingMessage}}</h1>
+					<p>Your score is <b>{{result}}</b> out of <b>{{possible}}</b>.</p>
+					<p>{{resultsMessage}}</p>
+				</div>
+
+				<div class="buttons">
+					<input type="button" id="btnRestart" class="btn" value="Restart" ng-click="initQuiz()">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
