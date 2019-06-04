@@ -102,25 +102,25 @@ function($scope, $interval)
 			]			
 		},
 		{
-			"text": "Which one of the following players is nicknamed 'God' by the Anfield crowd?",
+			"text": "What was Robbie Fowler's nickname?",
 			"answer": 3,
-			"explanation": "Only Robbie Fowler, to this day, has ever had the honor.",
+			"explanation": "Due to his natural killer instinct in front of goal, Fowler remains a Liverpool legend, and Anfield's God.",
 			"options": 
 			[
 				{
-					"text": "Javier Mascherano",
+					"text": "Robbs",
 					"selected": ""
 				},
 				{
-					"text": "Fernando Torres",
+					"text": "Thunderstorm",
 					"selected": ""
 				},
 				{
-					"text": "Jose Reina",
+					"text": "Rocket",
 					"selected": ""
 				},
 				{
-					"text": "Robbie Fowler",
+					"text": "God",
 					"selected": ""
 				}				
 			]			
